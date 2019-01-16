@@ -12,6 +12,15 @@ const data = {
             body: JSON.stringify(newData)
         })
     },
+    putData(interestId, interest){
+        return fetch(`http://localhost:8088/interests?id=${interestId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(interest)
+        })
+    },
     deleteData(dataType, dataId) {
         return fetch(`http://localhost:8088/${dataType}/${dataId}`, {
             method: "DELETE",
