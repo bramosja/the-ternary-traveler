@@ -1,5 +1,6 @@
 import data from "./data";
 import eventListeners from "./eventListeners"
+import travelList from "./travelList";
 
 const travelForm = {
     newPlaceOfInterest() {
@@ -118,8 +119,10 @@ const travelForm = {
                 cost: editPointCost.value,
                 placeId: editPlaceId
             }
-            console.log(editedInterest)
-            data.putData(interestId, editedInterest);
+            data.putData(interestId, editedInterest)
+                .then(()=> {
+                    travelList.addToDOM()
+            })
         })
 
         editPlaceField.appendChild(editplaceLabel);

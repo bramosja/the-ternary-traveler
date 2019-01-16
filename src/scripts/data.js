@@ -13,7 +13,7 @@ const data = {
         })
     },
     putData(interestId, interest){
-        return fetch(`http://localhost:8088/interests?id=${interestId}`, {
+        return fetch(`http://localhost:8088/interests/${interestId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
